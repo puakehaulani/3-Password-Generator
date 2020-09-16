@@ -11,6 +11,27 @@
 //
 // * Gather user input with prompt's and confirm's
 
+//////////////////////////////////////
+//PSUEDOCODE
+
+//Prompt for length of password 8-128, user to enter number. store response in a variable. recognize it as a number.
+
+//Prompt for using lowercase letters, user to enter ok or cancel (boolean). store response in a variable.
+
+//Prompt for using uppercase letters, user to enter ok or cancel (boolean). store response in a variable.
+
+//Prompt for using numeric characters, user to enter ok or cancel (boolean). store response in a variable.
+
+//Prompt for using special characters, user to enter ok or cancel (boolean). store response in a variable.
+
+//Validate all responses and make sure at least one is clicked as ok
+
+//generate random password character by character (i + 1)
+
+//return final password 
+
+//display on page
+
 ///////////////////////////////////////////////////////////////////////
 // DO NOT TOUCH THIS CODE
 //
