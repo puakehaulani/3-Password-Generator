@@ -14,26 +14,32 @@
 //////////////////////////////////////
 //MYCODE
 
-//Prompt for length of password 8-128, user to enter number.
+//Prompt for length of password 8-128,
+var passwordLength = prompt("Choose a password length of 8-128 characters")
+//user to enter number.
 //store response in a variable.
 //recognize it as a number.
 
 //Prompt for using lowercase letters,
+var confirmLowercase = confirm("Does your password have lowercase letters?")
 //user to enter ok or cancel (boolean).
 //store response in a variable.
 
 //Prompt for using uppercase letters,
+var confirmUppercase = confirm("Does your password have uppercase letters?")
 //user to enter ok or cancel (boolean).
 //store response in a variable.
 
 //Prompt for using numeric characters,
+var confirmNumber = confirm("Does your password have numbers?")
 //store response in a variable.
 
 //Prompt for using special characters,
+var confirmSpecial = confirm("Does your password have special characters?")
 //user to enter ok or cancel (boolean).
 //store response in a variable.
 
-//Validate all responses an
+//Validate all responses 
 //make sure at least one is clicked as ok
 
 //generate random password character by character (i + 1)
