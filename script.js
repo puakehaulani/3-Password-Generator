@@ -45,13 +45,13 @@ var confirmUppercase = false
 
 //Prompt for using numeric characters x
 // var confirmNumber = confirm("Does your password have numbers?")
-var confirmNumber = false
+var confirmNumber = true
 //store response in a variable x
 
 
 //Prompt for using special characters x
 // var confirmSpecial = confirm("Does your password have special characters?")
-var confirmSpecial = true
+var confirmSpecial = false
 //user to enter ok or cancel (boolean) x
 //store response in a variable x
 
@@ -61,6 +61,10 @@ var confirmSpecial = true
 let characters = "abcdefghijklmnopqrstuvwxyz"
 let special = "!@#$%^&*.,"
 
+function randomNumber(min, max) {
+    return Math.floor(Math.random() * (max - min) + min)
+}
+
 
 function generatePassword() {
     let password = "";
@@ -68,19 +72,19 @@ function generatePassword() {
     for (var i = 0; i < passwordLength; i++) {
         console.log("creating character")
         if (confirmNumber) {
-            console.log("i'm adding " + Math.floor(Math.random() * 10));
+            console.log("i'm adding " + randomNumber(0, 9));
             continue
         }
         if (confirmLowercase) {
-            console.log("i'm adding " + characters[0]);
+            console.log("i'm adding " + characters[randomNumber(0, characters.length)]);
             continue
         }
         if (confirmUppercase) {
-            console.log("i'm adding " + characters[0].toUpperCase());
+            console.log("i'm adding " + characters[randomNumber(0, characters.length)].toUpperCase());
             continue
         }
         if (confirmSpecial) {
-            console.log("i'm adding " + special[0]);
+            console.log("i'm adding " + special[randomNumber(0, special.length)]);
             continue
         }
         // what kind of character are we
