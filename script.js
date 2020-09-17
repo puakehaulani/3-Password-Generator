@@ -18,7 +18,7 @@
 
 //Prompt for length of password 8-128 x
 // var passwordLength = prompt("Choose a password length of 8-128 characters")
-var passwordLength = 5
+var passwordLength = 10
 //user to enter number
 //store response in a variable x
 
@@ -75,7 +75,7 @@ function generatePassword() {
     let needsUppercase = confirmUppercase
     let needsSpecial = confirmSpecial
     //generate random password character by character (i++)
-    for (var i = 0; i < passwordLength; i++) {
+    for (var i = 0; password.length < passwordLength; i++) {
         let randomChoice = randomNumber(0, 4)
         console.log("creating character " + randomChoice)
         if (needsNumber && randomChoice === 0) {
