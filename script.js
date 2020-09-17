@@ -17,7 +17,8 @@
 //make it so prompts dont show til button is clicked
 
 //Prompt for length of password 8-128 x
-var passwordLength = prompt("Choose a password length of 8-128 characters")
+// var passwordLength = prompt("Choose a password length of 8-128 characters")
+var passwordLength = 3
 //user to enter number
 //store response in a variable x
 
@@ -29,37 +30,59 @@ var passwordLength = prompt("Choose a password length of 8-128 characters")
 
 
 //Prompt for using lowercase letters x
-var confirmLowercase = confirm("Does your password have lowercase letters?")
+// var confirmLowercase = confirm("Does your password have lowercase letters?")
+var confirmLowercase = true
 //user to enter ok or cancel (boolean) x
 //store response in a variable x
 
 
 //Prompt for using uppercase letters x
-var confirmUppercase = confirm("Does your password have uppercase letters?")
+// var confirmUppercase = confirm("Does your password have uppercase letters?")
+var confirmUppercase = true
 //user to enter ok or cancel (boolean) x
 //store response in a variable x
 
 
 //Prompt for using numeric characters x
-var confirmNumber = confirm("Does your password have numbers?")
+// var confirmNumber = confirm("Does your password have numbers?")
+var confirmNumber = true
 //store response in a variable x
 
 
 //Prompt for using special characters x
-var confirmSpecial = confirm("Does your password have special characters?")
+// var confirmSpecial = confirm("Does your password have special characters?")
+var confirmSpecial = false
 //user to enter ok or cancel (boolean) x
 //store response in a variable x
 
 
 //Validate all responses 
 //make sure at least one is clicked as ok
-
+let characters = "abcdefghijklmnopqrstuvwxyz"
+let special = "!@#$%^&*.,"
 
 
 function generatePassword() {
     let password = "";
     //generate random password character by character (i + 1)
     for (var i = 0; i < passwordLength; i++) {
+        console.log("creating character")
+        if (confirmNumber) {
+            console.log("i'm adding " + Math.floor(Math.random() * 10););
+            continue
+        }
+        if (confirmLowercase) {
+            console.log("i'm adding " + characters[0]);
+            continue
+        }
+        if (confirmUppercase) {
+            console.log("i'm adding " + characters.toUpperCase[0]);
+            continue
+        }
+        if (confirmSpecial) {
+            console.log("i'm adding " + special[0]);
+            continue
+        }
         // what kind of character are we
         //add
 
