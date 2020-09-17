@@ -14,37 +14,58 @@
 //////////////////////////////////////
 //MYCODE
 
-//Prompt for length of password 8-128,
+//make it so prompts dont show til button is clicked
+
+//Prompt for length of password 8-128 x
 var passwordLength = prompt("Choose a password length of 8-128 characters")
-//user to enter number.
-//store response in a variable.
-//recognize it as a number.
+//user to enter number
+//store response in a variable x
 
-//Prompt for using lowercase letters,
+//recognize it as a number
+// if (isNAN(passwordLength)) {
+//     alert(passwordLength + " is not a number");
+// } else(passwordLength >= 129 | passwordLength <= 7) {
+//     alert("Please enter a number between 8 and 128")}
+
+
+//Prompt for using lowercase letters x
 var confirmLowercase = confirm("Does your password have lowercase letters?")
-//user to enter ok or cancel (boolean).
-//store response in a variable.
+//user to enter ok or cancel (boolean) x
+//store response in a variable x
 
-//Prompt for using uppercase letters,
+
+//Prompt for using uppercase letters x
 var confirmUppercase = confirm("Does your password have uppercase letters?")
-//user to enter ok or cancel (boolean).
-//store response in a variable.
+//user to enter ok or cancel (boolean) x
+//store response in a variable x
 
-//Prompt for using numeric characters,
+
+//Prompt for using numeric characters x
 var confirmNumber = confirm("Does your password have numbers?")
-//store response in a variable.
+//store response in a variable x
 
-//Prompt for using special characters,
+
+//Prompt for using special characters x
 var confirmSpecial = confirm("Does your password have special characters?")
-//user to enter ok or cancel (boolean).
-//store response in a variable.
+//user to enter ok or cancel (boolean) x
+//store response in a variable x
+
 
 //Validate all responses 
 //make sure at least one is clicked as ok
 
-//generate random password character by character (i + 1)
 
-//return final password 
+
+function generatePassword() {
+    let password = "";
+    //generate random password character by character (i + 1)
+    for (var i = 0; i < passwordLength; i++) {
+        // what kind of character are we
+        //add
+
+    }
+    return password;
+}
 
 //display on page
 
@@ -69,4 +90,5 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-//////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////
