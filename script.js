@@ -18,7 +18,7 @@
 
 //Prompt for length of password 8-128 x
 // var passwordLength = prompt("Choose a password length of 8-128 characters")
-var passwordLength = 3
+var passwordLength = 5
 //user to enter number
 //store response in a variable x
 
@@ -31,14 +31,14 @@ var passwordLength = 3
 
 //Prompt for using lowercase letters x
 // var confirmLowercase = confirm("Does your password have lowercase letters?")
-var confirmLowercase = false
+var confirmLowercase = true
 //user to enter ok or cancel (boolean) x
 //store response in a variable x
 
 
 //Prompt for using uppercase letters x
 // var confirmUppercase = confirm("Does your password have uppercase letters?")
-var confirmUppercase = false
+var confirmUppercase = true
 //user to enter ok or cancel (boolean) x
 //store response in a variable x
 
@@ -51,13 +51,15 @@ var confirmNumber = true
 
 //Prompt for using special characters x
 // var confirmSpecial = confirm("Does your password have special characters?")
-var confirmSpecial = false
+var confirmSpecial = true
 //user to enter ok or cancel (boolean) x
 //store response in a variable x
 
 
 //Validate all responses 
 //make sure at least one is clicked as ok
+
+
 let characters = "abcdefghijklmnopqrstuvwxyz"
 let special = "!@#$%^&*.,"
 
@@ -68,28 +70,68 @@ function randomNumber(min, max) {
 
 function generatePassword() {
     let password = "";
-    //generate random password character by character (i + 1)
+    let needsNumber = confirmNumber
+    let needsLowercase = confirmLowercase
+    let needsUppercase = confirmUppercase
+    let needsSpecial = confirmSpecial
+    //generate random password character by character (i++)
     for (var i = 0; i < passwordLength; i++) {
-        console.log("creating character")
-        if (confirmNumber) {
-            console.log("i'm adding " + randomNumber(0, 9));
+        let randomChoice = randomNumber(0, 4)
+        console.log("creating character " + randomChoice)
+        if (needsNumber && randomChoice === 0) {
+            let c = randomNumber(0, 10)
+            password = password + c
+            console.log("i'm adding " + c);
+            needsNumber = false
             continue
         }
-        if (confirmLowercase) {
-            console.log("i'm adding " + characters[randomNumber(0, characters.length)]);
+        if (needsLowercase && randomChoice === 1) {
+            let c = characters[randomNumber(0, characters.length)]
+            password = password + c
+            console.log("i'm adding " + c);
+            needsLowercase = false
             continue
         }
-        if (confirmUppercase) {
-            console.log("i'm adding " + characters[randomNumber(0, characters.length)].toUpperCase());
+        if (needsUppercase && randomChoice === 2) {
+            let c = characters[randomNumber(0, characters.length)]
+            password = password + c.toUpperCase()
+            console.log("i'm adding " + c);
+            needsUppercase = false
             continue
         }
-        if (confirmSpecial) {
-            console.log("i'm adding " + special[randomNumber(0, special.length)]);
+        if (needsSpecial && randomChoice === 3) {
+            let c = special[randomNumber(0, special.length)]
+            password = password + c
+            console.log("i'm adding " + c);
+            needsSpecial = false
             continue
         }
-        // what kind of character are we
-        //add
-
+        //actually add the character, not just console.log
+        //choose random character type, not the same one each time
+        if (randomChoice === 0 && confirmNumber) {
+            let c = randomNumber(0, 10)
+            password = password + c
+            console.log("i'm adding " + c);
+            continue
+        }
+        if (randomChoice === 1 && confirmLowercase) {
+            let c = characters[randomNumber(0, characters.length)]
+            password = password + c
+            console.log("i'm adding " + c);
+            continue
+        }
+        if (randomChoice === 2 && confirmUppercase) {
+            let c = characters[randomNumber(0, characters.length)]
+            password = password + c.toUpperCase()
+            console.log("i'm adding " + c);
+            continue
+        }
+        if (randomChoice === 3 && confirmNumber) {
+            let c = special[randomNumber(0, special.length)]
+            password = password + c
+            console.log("i'm adding " + c);
+            continue
+        }
     }
     return password;
 }
