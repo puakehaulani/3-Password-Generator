@@ -31,27 +31,27 @@ var passwordLength = 3
 
 //Prompt for using lowercase letters x
 // var confirmLowercase = confirm("Does your password have lowercase letters?")
-var confirmLowercase = true
+var confirmLowercase = false
 //user to enter ok or cancel (boolean) x
 //store response in a variable x
 
 
 //Prompt for using uppercase letters x
 // var confirmUppercase = confirm("Does your password have uppercase letters?")
-var confirmUppercase = true
+var confirmUppercase = false
 //user to enter ok or cancel (boolean) x
 //store response in a variable x
 
 
 //Prompt for using numeric characters x
 // var confirmNumber = confirm("Does your password have numbers?")
-var confirmNumber = true
+var confirmNumber = false
 //store response in a variable x
 
 
 //Prompt for using special characters x
 // var confirmSpecial = confirm("Does your password have special characters?")
-var confirmSpecial = false
+var confirmSpecial = true
 //user to enter ok or cancel (boolean) x
 //store response in a variable x
 
@@ -68,7 +68,7 @@ function generatePassword() {
     for (var i = 0; i < passwordLength; i++) {
         console.log("creating character")
         if (confirmNumber) {
-            console.log("i'm adding " + Math.floor(Math.random() * 10););
+            console.log("i'm adding " + Math.floor(Math.random() * 10));
             continue
         }
         if (confirmLowercase) {
@@ -76,7 +76,7 @@ function generatePassword() {
             continue
         }
         if (confirmUppercase) {
-            console.log("i'm adding " + characters.toUpperCase[0]);
+            console.log("i'm adding " + characters[0].toUpperCase());
             continue
         }
         if (confirmSpecial) {
