@@ -19,11 +19,10 @@ let characters = "abcdefghijklmnopqrstuvwxyz"
 let special = "!@#$%^&*.,"
 
 
-//helper function
+//helper functionsa
 function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min) + min)
 }
-
 
 function getPasswordLength(text) {
     let response = prompt(text)
@@ -34,6 +33,7 @@ function getPasswordLength(text) {
     return response
 }
 
+//MAIN FUNCTION
 function generatePassword() {
     let password = "";
     //Make it so prompts dont show til button is clicked
@@ -43,21 +43,32 @@ function generatePassword() {
         passwordLength = getPasswordLength("Choose a password length of 8-128")
     }
 
-    //Prompt for using lowercase letters user chooses ok/cancel boolean stores in confirmLowercase variable
-    var confirmLowercase = confirm("Does your password have lowercase letters?")
+    var confirmLowercase;
+    var confirmUppercase;
+    var confirmNumber;
+    var confirmSpecial;
+    var notComplete = true
+    while (notComplete) {
+        //Make sure at least one type is chosen ok
+        //If not alert and go back
 
-    //Prompt for using uppercase letters user chooses ok/cancel boolean stores in confirmUppercase variable
-    var confirmUppercase = confirm("Does your password have uppercase letters?")
+        //Prompt for using lowercase letters user chooses ok/cancel boolean stores in confirmLowercase variable
+        confirmLowercase = confirm("Does your password have lowercase letters?")
 
-    //Prompt for using numeric characters user chooses ok/cancel boolean stores in confirmNumber variable
-    var confirmNumber = confirm("Does your password have numbers?")
+        //Prompt for using uppercase letters user chooses ok/cancel boolean stores in confirmUppercase able
+        confirmUppercase = confirm("Does your password have uppercase letters?")
 
-    //Prompt for using special characters user chooses ok/cancel boolean stores in confirmSpecial variable
-    var confirmSpecial = confirm("Does your password have special characters?")
+        //Prompt for using numeric characters user chooses ok/cancel boolean stores in confirmNumber able
+        confirmNumber = confirm("Does your password have numbers?")
 
-    //Make sure at least one type is chosen ok
-    //If not alert and go back
-
+        //Prompt for using special characters user chooses ok/cancel boolean stores in confirmSpecial able
+        confirmSpecial = confirm("Does your password have special characters?")
+        if (confirmLowercase === false && confirmUppercase === false && confirmNumber === false && confirmSpecial === false) {
+            alert("Choose character valid types. You must choose at least one.")
+        } else {
+            notComplete = false
+        }
+    }
     //Create constants from user input
     let needsNumber = confirmNumber
     let needsLowercase = confirmLowercase
@@ -65,6 +76,7 @@ function generatePassword() {
     let needsSpecial = confirmSpecial
 
     //Generate random password character by character (i++)
+    //Practice creating one function to run these if's
     for (var i = 0; password.length < passwordLength; i++) {
         let randomChoice = randomNumber(0, 4)
         console.log("creating character " + randomChoice)
