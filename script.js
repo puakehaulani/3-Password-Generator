@@ -19,7 +19,7 @@ let characters = "abcdefghijklmnopqrstuvwxyz"
 let special = "!@#$%^&*.,"
 
 
-//helper functionsa
+//helper functions
 function randomNumber(min, max) {
     return Math.floor(Math.random() * (max - min) + min)
 }
@@ -78,6 +78,7 @@ function generatePassword() {
     //Generate random password character by character (i++)
     //Practice creating one function to run these if's
     for (var i = 0; password.length < passwordLength; i++) {
+        console.log("index " + i)
         let randomChoice = randomNumber(0, 4)
         console.log("creating character " + randomChoice)
         if (needsNumber && randomChoice === 0) {
